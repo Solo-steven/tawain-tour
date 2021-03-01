@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+
+a{
+    text-decoration : none;
+}
+.side-bar-container{
+    flex-grow: 1;
+    padding: 1.2rem;
+    background-color : #6d597a;
+    overflow-y: scroll;
+}
+
+.side-bar-header{
+    padding-top: 1rem;
+    border-bottom: 1px solid #fff;
+    margin-bottom : 2rem;
+}
+
+.side-bar-title{
+    font-family: 'Dancing Script', cursive;
+    font-size : 4.5rem;
+    color : #fff;
+}
+
+.side-bar-item{
+    display: block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    width : 100%;
+    background-color : transparent;
+    padding-bottom : .3rem;
+    margin-bottom : 1rem; 
+
+    border:  none;
+    outline : 0;
+}
+
+.side-bar-link{
+    margin: auto;
+    width : 70%;
+    font-size : 1.4rem;
+    color : #fff;
+}
+
+.side-bar-item::after{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    content: '';
+    background-color:  #e7a2a4f8;
+    width : 50%;
+    height : 1px;
+}
+.side-bar-item:hover  .side-bar-link{
+    border-radius: 15px;
+    background-color : #e7a2a4f8; 
+    color : #6d597a;
+    transition: all .2s ease-in;
+}
+
+.side-bar-item:hover .side-bar-item::after{
+    display : none;
+}
