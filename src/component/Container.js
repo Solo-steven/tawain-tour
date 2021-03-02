@@ -14,7 +14,7 @@ const city_Name = ['',  'Taipei','NewTaipei', 'Taoyuan', 'Taichung', 'Tainan',
              'Chiayi', 'PingtungCounty','YilanCounty','HualienCounty',
              'TaitungCounty','KinmenCounty','PenghuCounty','LienchiangCounty'];
 
-export default class ScenicContainer extends React.Component{
+export default class Container extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -123,17 +123,18 @@ export default class ScenicContainer extends React.Component{
                         <Route exact path='/' component={Welcome}/>
                         {
                             purpose.map( (purpose,index)=>{
-                             return <Route  exact path={`/${purpose}/:city?`}
-                                            key={index}
-                                            render= {(props)=>{
-                                                return <Window 
-                                                            purpose ={purpose}
-                                                            count ={this.state.window_Count}
-                                                            emitSignal_flipCityPage  = {this.flipCityPage}
-                                                            emitSignal_reachBottom    = {this.reachBottom}
-                                                            city = {this.state.city.filter(city => city.name === (!(props.match.params.city) ? '' :props.match.params.city ))[0]}
-                                                        />
-                                            }}
+                             return <Route  
+                                      exact path={`/${purpose}/:city?`}
+                                      key={index}
+                                      render= {(props)=>{
+                                        return <Window 
+                                                  purpose ={purpose}
+                                                  count ={this.state.window_Count}
+                                                  emitSignal_flipCityPage  = {this.flipCityPage}
+                                                  emitSignal_reachBottom    = {this.reachBottom}
+                                                  city = {this.state.city.filter(city => city.name === (!(props.match.params.city) ? '' :props.match.params.city ))[0]}
+                                                />
+                                       }}
                                     />
                             })
                         }      

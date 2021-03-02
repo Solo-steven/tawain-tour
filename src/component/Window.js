@@ -9,7 +9,7 @@ import './../asset/card.css';
  *      2. 判斷url是變化 . 是的話呼叫emitSingal_flipCityPage.
  */
 
-export default class ScenicWindow extends React.Component{
+export default class Window extends React.Component{
     constructor(props){
         super(props);
         this.window_ref = React.createRef();
