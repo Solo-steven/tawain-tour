@@ -2,6 +2,8 @@
 
 a{
     text-decoration : none;
+    display :block;
+    width : 100%;
 }
 .side-bar-container{
     flex-grow: 1;
@@ -22,42 +24,82 @@ a{
     color : #fff;
 }
 
-.side-bar-item{
-    display: block;
-    position: relative;
-    font-family: 'Dancing Script', cursive;
-    width : 100%;
-    background-color : transparent;
-    padding-bottom : .3rem;
-    margin-bottom : 1rem; 
+.side-bar-body{
+    display :flex;
+    flex-direction : column;
+    align-items: center;
+}
 
+.side-bar-item{
     border:  none;
     outline : 0;
+
+    display: block;
+    position: relative;
+    width : 80%;
+    background-color : transparent;
+    border-radius : 15px;
+    margin: auto;
+    padding-bottom : .3rem;
+    margin-bottom : 1rem; 
+}
+.side-bar-item::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left : 10%;
+    width: 80%;
+    height: 1px;
+    background-color : #e7a2a4f8 ;
+}
+
+.side-bar-item:hover{
+    background-color : #e7a2a4f8;  
+    transition: all .2s ease-in;
 }
 
 .side-bar-link{
-    margin: auto;
-    width : 70%;
     font-size : 1.4rem;
     color : #fff;
+    font-family: 'Dancing Script', cursive;
 }
 
-.side-bar-item::after{
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    content: '';
-    background-color:  #e7a2a4f8;
-    width : 50%;
-    height : 1px;
-}
 .side-bar-item:hover  .side-bar-link{
-    border-radius: 15px;
-    background-color : #e7a2a4f8; 
     color : #6d597a;
     transition: all .2s ease-in;
 }
 
-.side-bar-item:hover .side-bar-item::after{
-    display : none;
+
+.dropdown{
+    display : block;
+    width : 90%;
+    position: relative;
+    border-radius : 14px;
+    margin-bottom: 1.5rem;
+}
+.dropdown:hover{
+    border: 1px solid #e7a2a4f8;
+    box-shadow : 0px 0px 5px #e7a2a4f8;
+}
+.dropdown-button{
+    display: block;
+    width : 100%;
+    outline : 0;
+    border: none;
+    font-size : 2rem;
+    letter-spacing : 3px;
+    color : #6d597a;
+    border-radius : 13px;
+    font-family: 'Dancing Script', cursive;
+    background-color : #e9c5c6f8;  
+}
+.dropdown:hover .dropdown-button{
+    margin-bottom : 1.5rem
+}
+.dropdown-menu{
+  display : none;
+}
+.dropdown:hover .dropdown-menu{
+    display : block;
+    transition: all .8s ease-in;
 }

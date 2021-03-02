@@ -1,9 +1,9 @@
 import React from 'react';
 import './../asset/welcome.css';
 
-export default class ScenicWelcome extends React.Component{
-    render(){
-        return (
+const ScenicWelcome = ()=> {
+    console.log('welcome redner');
+    return (
         <div className='welcome-container'>
             <div className='welcome-card'>
                 <div className='welcome-header'>
@@ -16,6 +16,7 @@ export default class ScenicWelcome extends React.Component{
                 </div>
             </div>
         </div>
-        )
-    }
+    )
 }
+
+export default ScenicWelcome;
