@@ -29,7 +29,7 @@ export default class Window extends React.Component{
     }
     async componentDidUpdate(prevProps){
         console.log('window update');
-        if(prevProps.purpose === undefined)
+        if(prevProps.purpose === undefined || this.props)
             this.window_ref.current.addEventListener('scroll', this.detectScrollToBottom);
         if(prevProps.city.name !== this.props.city.name || this.props.purpose !== prevProps.purpose){
             console.log(`Event : Filpe To New City :${this.props.city.name} `);
@@ -42,14 +42,13 @@ export default class Window extends React.Component{
     }
     render(){
         console.log('window render');
+        let content ;
         if(this.props.purpose === undefined)
-            return <Welcome/>;
-        if(his.props.city[this.props.purpose].length=== 0 )
-           return null;    
-        return (
-            <div className='card-wrap' ref={this.window_ref}>
-                { 
-                    this.props.city[this.props.purpose].map( (data_arr ,index_outside)=>{
+            content = <Welcome/>;
+        if(this.props.city[this.props.purpose].length=== 0 )
+           content= null;
+        else 
+            content =this.props.city[this.props.purpose].map( (data_arr ,index_outside)=>{
                         if(index_outside <= this.props.count )
                             return data_arr.map( (data ,index_inside) =>{
                                 return <Card 
@@ -64,8 +63,12 @@ export default class Window extends React.Component{
                             });
                             return null;    
                     })
-                }
-            </div>
-        )
+
+
+        return (  <div className='card-wrap' ref={this.window_ref}>
+                     {content}
+                  </div>
+               )  
+        
     }
 }
