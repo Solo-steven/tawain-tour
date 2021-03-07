@@ -4,7 +4,6 @@ import './../asset/layout.css';
 
 import Sidebar from './Sidebar'
 import Window  from './Window'
-import Welcome from './Welcome'
 import fetchData from '../pure function/fetch'
 
 const purpose   = ['ScenicSpot', 'Hotel' , 'Restaurant'];
@@ -120,24 +119,17 @@ export default class Container extends React.Component{
                         <Sidebar city_Name={city_Name} purpose={purpose}/>
                     </div>
                     <div className='layout-widnow'>
-                        <Route exact path='/' component={Welcome}/>
-                        {
-                            purpose.map( (purpose,index)=>{
-                             return <Route  
-                                      exact path={`/${purpose}/:city?`}
-                                      key={index}
-                                      render= {(props)=>{
-                                        return <Window 
-                                                  purpose ={purpose}
-                                                  count ={this.state.window_Count}
-                                                  emitSignal_flipCityPage  = {this.flipCityPage}
-                                                  emitSignal_reachBottom    = {this.reachBottom}
-                                                  city = {this.state.city.filter(city => city.name === (!(props.match.params.city) ? '' :props.match.params.city ))[0]}
-                                                />
-                                       }}
-                                    />
-                            })
-                        }      
+                        <Route exact path='/:purpose?/:city?' 
+                               render= {(props)=>{
+                                    return <Window 
+                                                purpose ={props.match.params.purpose}
+                                                count ={this.state.window_Count}
+                                                emitSignal_flipCityPage  = {this.flipCityPage}
+                                                emitSignal_reachBottom    = {this.reachBottom}
+                                                city = {this.state.city.filter(city => city.name === (!(props.match.params.city) ? '' :props.match.params.city ))[0]}
+                                            />
+                                    }}
+                            />   
                     </div>
                 </div>
             </BrowserRouter>    

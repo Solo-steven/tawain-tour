@@ -9,6 +9,8 @@
 
 .layout-container{
     display :flex;
+    position :relative;
+    z-index: 0;
     height: 100vh;
     width : 100vw;
     overflow : hidden;

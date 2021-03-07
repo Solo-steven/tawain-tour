@@ -3,7 +3,6 @@ import { Link} from 'react-router-dom'
 
 import './../asset/sidebar.css'
 
-
 const Sidebar = (props)=>{
     console.log('side bar render', props);
     return(
@@ -36,5 +35,4 @@ const Sidebar = (props)=>{
         </div>
     )    
 }
-
 export default React.memo(Sidebar);
