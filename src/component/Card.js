@@ -5,7 +5,7 @@ import  Modal from './Modal';
 
 const Card = (props)=>{
     let [isRender , handleRender] = useState(false);
-
+    console.log('card render')
     return (
         <React.Fragment>  
           <div className='card' onClick={()=>{handleRender(!isRender)}}>
