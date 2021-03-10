@@ -39,6 +39,8 @@ export default class Container extends React.Component{
         console.log('container update finish .');
     }
     async flipCityPage(purpose , city_Name){
+        if(purpose === undefined)
+            return;
         let target_city , data;
         for(let single_city of this.state.city){
             if(single_city.name === city_Name){
@@ -68,6 +70,8 @@ export default class Container extends React.Component{
         return
     }
     async reachBottom(purpose, city_Name ){
+        if(purpose === undefined)
+            return;
         for(let city of this.state.city){
             if(city.name === city_Name){
                 if(city[purpose].length-1 >= this.state.window_Count+1){

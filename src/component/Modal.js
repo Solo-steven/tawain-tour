@@ -3,7 +3,6 @@ import React from 'react';
 import './../asset/modal.css';
 
 const Modal =(props) => {
-    console.log('modal render');  
     if(!props.isRender)
         return null;
     return (
