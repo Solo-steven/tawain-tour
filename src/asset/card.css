@@ -6,7 +6,7 @@
     z-index: 5;
     flex-grow: 1;
     display: flex;
-    flex-direction: row;
+    flex-grow: 1;
     flex-wrap: wrap;
     background: linear-gradient(50deg,  #e08487 50%, #5f4172 50%);
     overflow-y: scroll;
