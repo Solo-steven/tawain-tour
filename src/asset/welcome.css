@@ -1,20 +1,3 @@
-.welcome-container{
-    flex-grow: 1;
-    background: linear-gradient(50deg,  #e08487 50%, #725288 50%);
-    display : flex;
-    align-items : center;
-    justify-content: center;
-    position : relative;
-}
-.welcome-container::after{
-    content: "";
-    position: absolute;
-    z-index : 1;
-    width : 100%;
-    height : 100%;
-    backdrop-filter: blur(2px);
-}
-
 
 .welcome-card{
     margin: auto;
