@@ -30,6 +30,7 @@
 }
 
 .card {
+    cursor: pointer;
     display: flex;
     position:relative;
     z-index : 8;

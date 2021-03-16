@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route ,Switch} from 'react-router-dom';
 import './../asset/layout.css';
 
 import Sidebar from './Sidebar'
@@ -123,6 +123,7 @@ export default class Container extends React.Component{
                         <Sidebar city_Name={city_Name} purpose={purpose}/>
                     </div>
                     <div className='layout-widnow'>
+                     <Switch> 
                         <Route exact path='/:purpose?/:city?' 
                                render= {(props)=>{
                                     return <Window 
@@ -133,7 +134,8 @@ export default class Container extends React.Component{
                                                 city = {this.state.city.filter(city => city.name === (!(props.match.params.city) ? '' :props.match.params.city ))[0]}
                                             />
                                     }}
-                            />   
+                            />
+                        </Switch>       
                     </div>
                 </div>
             </BrowserRouter>    
