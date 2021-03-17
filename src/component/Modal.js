@@ -3,11 +3,10 @@ import React from 'react';
 import './../asset/modal.css';
 
 const Modal =(props) => {
-    if(!props.isRender)
-        return null;
+    console.log('modal render');
     return (
         <div className='modal' >
-            <div className='modal-dialog'  onClick={props.onClick}>
+            <div className='modal-dialog' onClick={() =>{props.history.goBack();} }>
                 <div className='modal-content' onClick={(e) =>{e.stopPropagation();}}>
                     <div className='modal-header'>
                         <h2 className='modal-title'>

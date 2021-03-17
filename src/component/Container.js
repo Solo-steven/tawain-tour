@@ -124,9 +124,10 @@ export default class Container extends React.Component{
                     </div>
                     <div className='layout-widnow'>
                      <Switch> 
-                        <Route exact path='/:purpose?/:city?' 
+                        <Route path='/:purpose?/:city?' 
                                render= {(props)=>{
                                     return <Window 
+                                                {...props}
                                                 purpose ={props.match.params.purpose}
                                                 count ={this.state.window_Count}
                                                 emitSignal_flipCityPage  = {this.flipCityPage}

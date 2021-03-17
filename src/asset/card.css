@@ -29,13 +29,15 @@
     text-align: center;
 }
 
-.card {
+.card-link{
+    display:  block;
     cursor: pointer;
     display: flex;
     position:relative;
     z-index : 8;
     flex-direction: column;
     width : 30%;
+    text-decoration: none; 
     margin : 1rem;
     border-radius: 15px;
     border: 1px solid gray;
