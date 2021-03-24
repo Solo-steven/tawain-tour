@@ -19,6 +19,13 @@ export default class Window extends React.Component{
             await this.props.emitSignal_reachBottom(this.props.purpose, this.props.city.name);
         }
     }
+    shouldComponentUpdate(nextProps){
+        if( this.props.match.path    ===  nextProps.match.path  && 
+            this.props.match.url     ===  nextProps.match.url   && 
+            this.props.match.isExact === !nextProps.match.isExact)
+            return false;
+        return true;    
+    }
     async componentDidMount(){
         console.log('window mount');
         this.window_ref.current.addEventListener('scroll', this.detectScrollToBottom);
@@ -65,8 +72,8 @@ export default class Window extends React.Component{
                                 return data_arr.map( (data ,index_inside) =>{
                                     return <Route  
                                             path={`${this.props.match.path}/${data.Name}`}
-                                            key={index_inside + (30* index_outside)}
-                                             render={(props)=>{
+                                            key={-(index_inside + (30* index_outside))-1}
+                                            render={(props)=>{
                                                 return  <Modal 
                                                                 {...props}
                                                                 title={data.Name} 

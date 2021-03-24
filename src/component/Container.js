@@ -127,7 +127,7 @@ export default class Container extends React.Component{
                         <Route path='/:purpose?/:city?' 
                                render= {(props)=>{
                                     return <Window 
-                                                {...props}
+                                                match = {props.match}
                                                 purpose ={props.match.params.purpose}
                                                 count ={this.state.window_Count}
                                                 emitSignal_flipCityPage  = {this.flipCityPage}
